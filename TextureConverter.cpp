@@ -19,7 +19,7 @@ void TextureConverter::LoadWICTextureFromFile(const std::string& filePath)
 	HRESULT result = LoadFromWICFile(wFilePath.c_str(), WIC_FLAGS_NONE, &metadata_, scratchImage_);
 
 	assert(SUCCEEDED(result));
-
+	 
 	//フォルダパスとファイル名を分離する
 	SeparateFilePath(wFilePath);
 }
