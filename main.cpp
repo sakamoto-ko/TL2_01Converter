@@ -12,7 +12,14 @@ enum Argument {
 };
 
 int main(int argc, char* argv[]) {
-	assert(argc <= NumArgument);
+	//assert(argc <= NumArgument);
+
+	//コマンドライン引数指定なし
+	if (argc < NumArgument) {
+		//使い方を表示する
+		TextureConverter::OutputUsage();
+		return 0;
+	}
 
 	//COMライブラリの初期化
 	HRESULT hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED);

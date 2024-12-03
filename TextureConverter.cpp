@@ -127,3 +127,12 @@ void TextureConverter::SaveDDSTextureToFile()
 	result = SaveToDDSFile(scratchImage_.GetImages(), scratchImage_.GetImageCount(), metadata_, DDS_FLAGS_NONE, filePath.c_str());
 	assert(SUCCEEDED(result));
 }
+
+void TextureConverter::OutputUsage()
+{
+	printf("画像ファイルでWIC形式からDDS形式に変換します。\n");
+	printf("\n");
+	printf("TextureConverter [ドライブ:][パス][ファイル名]\n");
+	printf("\n");
+	printf(" [ドライブ:][パス][ファイル名]: 変換したいWIC形式の画像ファイルを指定します。\n");
+}

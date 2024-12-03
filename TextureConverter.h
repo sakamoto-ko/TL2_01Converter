@@ -8,6 +8,9 @@ public:
 	//テクスチャをWICからDDSに変換する
 	void ConvertTextureWiCToDDs(const std::string& filePath);
 
+	//使用方法を表示する
+	static void OutputUsage();
+
 private:
 	//テクスチャファイル読み込み
 	void LoadWICTextureFromFile(const std::string& filePath);
