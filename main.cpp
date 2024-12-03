@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 	CoUninitialize();
 
 	//OSが勝手に閉じるのを阻止
-	system("pause");
+	//system("pause");
 
 	return 0;
 }
