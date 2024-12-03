@@ -3,7 +3,7 @@
 
 using namespace DirectX;
 
-void TextureConverter::ConvertTextureWiCToDDs(const std::string& filePath, int numOptions = 0, char* options[] = nullptr)
+void TextureConverter::ConvertTextureWiCToDDs(const std::string& filePath, int numOptions, char* options[])
 {
 	//テクスチャファイルを読み込む
 	LoadWICTextureFromFile(filePath);
