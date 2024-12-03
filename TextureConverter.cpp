@@ -17,7 +17,7 @@ void TextureConverter::LoadWICTextureFromFile(const std::string& filePath)
 	std::wstring wFilePath = ConvertMultiByteStringToWideString(filePath);
 	HRESULT result = {};
 
-	if (fileExt_ == L"dds") {
+	if (fileExt_ == L"dds") { //std::wstring型に変換するためには””の前にLをつける
 		//DDSテクスチャの読み込み
 		result = LoadFromDDSFile(wFilePath.c_str(), DDS_FLAGS_NONE, &metadata_, scratchImage_);
 	}
@@ -67,7 +67,7 @@ void TextureConverter::SeparateFilePath(const std::wstring& filePath)
 	}
 
 	//区切り文字'\\'が出てくる一番最後の部分を検索
-	pos1 = exceptExt.rfind('\\'); //ファイルの￥マークを抽出 ￥マークは拡張文字でそのまま取得することができないため//で取得している
+	pos1 = exceptExt.rfind('\\'); //ファイルの￥マークを抽出 ￥マークは拡張文字でそのまま取得することができないため"//"で取得している
 	//検索がヒットしたら
 	if (pos1 != std::wstring::npos) {
 		//区切り文字の前までをディレクトリパスとして保存
