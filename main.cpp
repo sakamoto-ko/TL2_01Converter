@@ -28,6 +28,11 @@ int main(int argc, char* argv[]) {
 	//テクスチャコンバーターの生成
 	TextureConverter converter;
 
+	//オプションの数
+	int numOptions = argc - NumArgument;
+	//オプション配列（ダブルポインタ）
+	char** options = argv + NumArgument;
+
 	//テクスチャ変換
 	converter.ConvertTextureWiCToDDs(argv[kFilePath]);
 
